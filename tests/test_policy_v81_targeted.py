@@ -44,6 +44,13 @@ class DatedPublicDirectoryTests(unittest.TestCase):
         r=self.parse('cn_e8b37b376677',html)
         self.assertEqual(r['links'][0]['date'],'2026-10-11')
 
+    def test_jilin_government_current_document_list_has_dates(self):
+        html = '''<ul><li><a href="/zwgk/zcxx/zfwj/202610/t20261016_123.html">吉林省人民政府关于印发新能源发展规划的通知</a><span>2026.10.16</span></li></ul>'''
+        r=self.parse('cn_fcdd8a95a7df',html)
+        self.assertEqual(SOURCES['cn_fcdd8a95a7df']['url'],'https://www.jl.gov.cn/zcxx/zfwj/wap.html')
+        self.assertTrue(r['selector_matched'])
+        self.assertEqual(r['links'][0]['date'],'2026-10-16')
+
     def test_zhejiang_regulator_direct_article_date_in_row(self):
         html = '''<ul><li><a href="/dtyw/tzgg/202609/t20260930_309794.html">关于公开征求《浙江电力市场监管实施办法（征求意见稿）》等意见的公告</a><time datetime="2026-09-30">日期</time></li></ul>'''
         r=self.parse('cn_a85889da2306',html)

@@ -86,12 +86,12 @@ class ScraperChecks(unittest.TestCase):
   self.assertEqual(obj['clause_scoring'][0]['importance']['score'],100)
   self.assertIn('impact_chain',obj)
   self.assertIn('responsible_teams',obj)
- def test_end_to_end_all_138_offline_fixtures(self):
+ def test_end_to_end_all_139_offline_fixtures(self):
   # No network: asserts loop coverage, output JSON, 30-day setting and no fabricated articles.
   with tempfile.TemporaryDirectory() as temp:
    dr=Path(temp); dr.mkdir(exist_ok=True)
    def mock_fetch(url):return '<html><body><h1>官方公开目录</h1><p>暂无条目</p></body></html>',url,'html'
-   kw={'DATA':dr,'POLICIES':dr/'policies.json','STATUSES':dr/'policy_source_status.json','CANDIDATES':dr/'policy_candidates_review.json','STATE':dr/'policy_crawl_state.json','CHECKPOINTS':dr/'policy_source_checkpoints.json','SCORES':dr/'reviewed_policy_scores.json'}
+   kw={'DATA':dr,'POLICIES':dr/'policies.json','STATUSES':dr/'policy_source_status.json','CANDIDATES':dr/'policy_candidates_review.json','STATE':dr/'policy_crawl_state.json','CHECKPOINTS':dr/'policy_source_checkpoints.json','SCORES':dr/'reviewed_policy_scores.json','DETAIL_QUEUE':dr/'policy_detail_retry_queue.json'}
    from contextlib import ExitStack
    with ExitStack() as stack:
     for key,val in kw.items():stack.enter_context(patch.object(p,key,val))

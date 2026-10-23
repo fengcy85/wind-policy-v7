@@ -795,9 +795,9 @@
     "province": "吉林",
     "group": "吉林",
     "name": "吉林省人民政府",
-    "url": "https://xxgk.jl.gov.cn/szf/gkml/",
+    "url": "https://www.jl.gov.cn/zcxx/zfwj/wap.html",
     "entry_urls": [
-      "https://xxgk.jl.gov.cn/szf/gkml/"
+      "https://www.jl.gov.cn/zcxx/zfwj/wap.html"
     ],
     "source_type": "政策法规",
     "crawl_mode": "html_listing",

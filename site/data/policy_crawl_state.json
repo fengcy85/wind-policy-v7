@@ -1,21 +1,34 @@
 {
   "version": "V7-province-first",
-  "last_run": null,
-  "note": "新交付包暂无V7真实抓取；历史V6状态已归档 diagnostics/",
+  "scope": "provincial",
+  "last_run": "2026-10-19T09:51:25+00:00",
   "configured_source_count": 139,
-  "attempted_source_count": 0,
-  "initial_phase_count": 0,
+  "attempted_source_count": 118,
+  "initial_phase_count": 21,
   "incremental_phase_count": 0,
-  "initialized_source_count": 0,
-  "pending_initialization_count": 139,
+  "initialized_source_count": 57,
+  "pending_initialization_count": 82,
   "bootstrap_days": 30,
   "daily_overlap_days": 2,
+  "domestic_lookback_days": 30,
+  "domestic_time_coverage_required": false,
+  "domestic_successful_listings": 50,
+  "domestic_sources_with_discoveries": 17,
+  "detail_pending_source_count": 2,
+  "detail_pending_count": 63,
+  "listing_verified_count": 0,
   "status_counts": {
-    "not_tested": 139
+    "blocked": 13,
+    "connection_error": 33,
+    "needs_adapter": 11,
+    "not_tested": 21,
+    "ok_no_recent": 40,
+    "ok_with_results": 17,
+    "timeout": 4
   },
   "change_counts": {
-    "inserted": 0,
-    "updated": 0,
-    "unchanged": 0
+    "inserted": 8,
+    "updated": 2,
+    "unchanged": 14
   }
 }

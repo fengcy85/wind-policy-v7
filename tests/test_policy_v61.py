@@ -211,7 +211,7 @@ class V61Checkpoints(unittest.TestCase):
    path=Path(tmp)
    paths={'DATA':path,'POLICIES':path/'policies.json','STATUSES':path/'status.json',
           'CANDIDATES':path/'review.json','STATE':path/'state.json','CHECKPOINTS':path/'checkpoints.json',
-          'SCORES':path/'scores.json'}
+          'SCORES':path/'scores.json','DETAIL_QUEUE':path/'policy_detail_retry_queue.json'}
    with ExitStack() as stack:
     for key,val in paths.items():stack.enter_context(patch.object(p,key,val))
     stack.enter_context(patch.object(p,'scrape_one',side_effect=fake_scrape))
